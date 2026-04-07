@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Luxury Hotel Theme - Light */
+    --background: 40 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Navy - Trust & Luxury */
+    --primary: 222 47% 20%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Warm Cream */
+    --secondary: 40 33% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 222 20% 45%;
+
+    /* Gold Accent - Elegance */
+    --accent: 30 45% 65%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 30 45% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --gold: 30 45% 65%;
+    --gold-light: 35 50% 80%;
+    --gold-dark: 28 40% 50%;
+    --navy: 222 47% 20%;
+    --navy-light: 222 35% 35%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 25% 92%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(222 47% 15% / 0.95) 0%,
+      hsl(222 47% 25% / 0.85) 100%
+    );
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(30 45% 65%) 0%,
+      hsl(35 50% 75%) 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(40 33% 98%) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(222 47% 20% / 0.04);
+    --shadow-md: 0 4px 20px hsl(222 47% 20% / 0.08);
+    --shadow-lg: 0 8px 40px hsl(222 47% 20% / 0.12);
+    --shadow-gold: 0 4px 20px hsl(30 45% 65% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 40 33% 96%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 30 45% 65%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 35% 18%;
+    --secondary-foreground: 40 33% 96%;
+
+    --muted: 222 35% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 30 45% 65%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 35% 20%;
+    --input: 222 35% 20%;
+    --ring: 30 45% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent;
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold) / 0) 0%,
+      hsl(var(--gold) / 0.3) 50%,
+      hsl(var(--gold) / 0) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}

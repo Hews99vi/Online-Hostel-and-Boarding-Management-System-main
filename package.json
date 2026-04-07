@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n BACKEND,FRONTEND -c green,blue \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
+  }
+}
