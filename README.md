@@ -1,4 +1,3 @@
-# PUSL3120 Project by Group 19
 
 ## 🏨 LuxeStay - Hotel Booking & Management System
 
